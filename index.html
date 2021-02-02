@@ -6,10 +6,17 @@
         Trip calculator
     </title>
 </head>
-<h1>Trip calculator</h1>
-<button onclick="displayData()">Display data</button>
 
 <body>
+    <h1>Trip calculator</h1>
+    <button onclick="displayData()">Display data</button>
+    <table id="myTable">
+        <thead>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
     <script>
         function displayData() {
             let chicago = { destination: "Chicago", miles: 329, gallons: 10.6 }
@@ -19,7 +26,7 @@
             let cincinnati = { destination: "Cincinnati", miles: 132, gallons: 3.9 }
 
             let cities = [chicago, stLouis, indianapolis, nashville, cincinnati]
-            let table = document.createElement("myTable");
+            let table = document.getElementById("myTable");
 
             // Create a <tr> element and add it to the 1st position of the table:
             table.innerHTML = "<thead><th>Destination</th><th>Miles</th><th>Gallons</th><th>MPG</th></thead>";
