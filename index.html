@@ -30,14 +30,16 @@
             const cities = [chicago, stLouis, indianapolis, nashville, cincinnati];
             appendTHs("table-head", ["Destination", "Miles", "Gallons", "MPG"]);
         }
-        function appendTH(parentId, headerText) {
+        function appendTH(parent, headerText) {
             const data = document.createElement("th");
             data.appendChild(document.createTextNode(headerText));
-            document.getElementById(parentId).appendChild(data)
+            parent.appendChild(data);
         }
         function appendTHs(parentId, headerTextArray) {
+            const myRow = document.createElement("tr");
+            document.getElementById(parentId).appendChild(myRow);
             headerTextArray.forEach(element => {
-                appendTH(parentId, element);
+                appendTH(myRow, element);
             });
 
         }
