@@ -28,16 +28,16 @@
             const cincinnati = { destination: "Cincinnati", miles: 132, gallons: 3.9 }
 
             const cities = [chicago, stLouis, indianapolis, nashville, cincinnati];
-            appendTHs(["Destination", "Miles", "Gallons", "MPG"]);
+            appendTHs("table-head", ["Destination", "Miles", "Gallons", "MPG"]);
         }
-        function appendTH(parentId, headerText){
+        function appendTH(parentId, headerText) {
             const data = document.createElement("th");
             data.appendChild(document.createTextNode(headerText));
             document.getElementById(parentId).appendChild(data)
         }
-        function appendTHs(myArray){
-            myArray.forEach(element => {
-                appendTH("table-head", element);
+        function appendTHs(parentId, headerTextArray) {
+            headerTextArray.forEach(element => {
+                appendTH(parentId, element);
             });
 
         }
