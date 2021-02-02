@@ -28,15 +28,18 @@
             const cincinnati = { destination: "Cincinnati", miles: 132, gallons: 3.9 }
 
             const cities = [chicago, stLouis, indianapolis, nashville, cincinnati];
-            createTH("Destination");
-            createTH("Miles");
-            createTH("Gallons");
-            createTH("MPG");
+            appendTHs(["Destination", "Miles", "Gallons", "MPG"]);
         }
-        function createTH(text){
+        function appendTH(text){
             const data = document.createElement("th");
             data.appendChild(document.createTextNode(text));
             document.getElementById("table-head").appendChild(data)
+        }
+        function appendTHs(myArray){
+            myArray.forEach(element => {
+                appendTH(element);
+            });
+
         }
 
     </script>
