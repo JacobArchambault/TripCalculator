@@ -16,7 +16,6 @@
         <thead id="table-head">
         </thead>
         <tbody id="table-body">
-
         </tbody>
     </table>
     <script>
@@ -29,8 +28,9 @@
 
             const cities = [chicago, stLouis, indianapolis, nashville, cincinnati];
             appendTHs("table-head", ["Destination", "Miles", "Gallons", "MPG"]);
+            cities.forEach(x => appendTHs("table-body", [x.destination, x.miles, x.gallons]));
         }
-        function append(parent, text, elementType){
+        function append(parent, text, elementType) {
             const data = document.createElement(elementType);
             data.appendChild(document.createTextNode(text));
             parent.appendChild(data);
@@ -45,7 +45,6 @@
             headerTextArray.forEach(element => {
                 appendTH(myRow, element);
             });
-
         }
 
     </script>
