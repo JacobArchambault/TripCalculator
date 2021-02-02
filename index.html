@@ -5,38 +5,41 @@
     <title>
         Trip calculator
     </title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
-<body>
+<body
     <h1>Trip calculator</h1>
     <button class="btn-primary" onclick="displayData()">Display data</button>
-    <table id="myTable" class="table">
-        <thead class="thead-light">
-            <th>Destination</th>
-            <th>Miles</th>
-            <th>Gallons</th>
-            <th>MPG</th>
+    <table id="my-table" class="table table-striped">
+        <thead id="table-head">
         </thead>
-        <tbody>
+        <tbody id="table-body">
 
         </tbody>
     </table>
     <script>
         function displayData() {
-            let chicago = { destination: "Chicago", miles: 329, gallons: 10.6 }
-            let stLouis = { destination: "St. Louis", miles: 284, gallons: 10.5 }
-            let indianapolis = { destination: "Indianapolis", miles: 122, gallons: 3.7 }
-            let nashville = { destination: "Nashville", miles: 191, gallons: 6.4 }
-            let cincinnati = { destination: "Cincinnati", miles: 132, gallons: 3.9 }
+            const chicago = { destination: "Chicago", miles: 329, gallons: 10.6 }
+            const stLouis = { destination: "St. Louis", miles: 284, gallons: 10.5 }
+            const indianapolis = { destination: "Indianapolis", miles: 122, gallons: 3.7 }
+            const nashville = { destination: "Nashville", miles: 191, gallons: 6.4 }
+            const cincinnati = { destination: "Cincinnati", miles: 132, gallons: 3.9 }
 
-            let cities = [chicago, stLouis, indianapolis, nashville, cincinnati]
-            let table = document.getElementById("myTable");
-
-            // Create a <tr> element and add it to the 1st position of the table:
-
-
+            const cities = [chicago, stLouis, indianapolis, nashville, cincinnati];
+            createTHead("Destination");
+            createTHead("Miles");
+            createTHead("Gallons");
+            createTHead("MPG");
         }
+        function createTHead(text){
+            const data = document.createElement("th");
+            const header = document.createTextNode(text);
+            data.appendChild(header)
+            document.getElementById("table-head").appendChild(data)
+        }
+
     </script>
 </body>
 
