@@ -12,7 +12,11 @@
     <h1>Trip calculator</h1>
     <button class="btn-primary" onclick="displayData()">Display data</button>
     <table id="myTable" class="table">
-        <thead>
+        <thead class="thead-light">
+            <th>Destination</th>
+            <th>Miles</th>
+            <th>Gallons</th>
+            <th>MPG</th>
         </thead>
         <tbody>
 
@@ -30,7 +34,6 @@
             let table = document.getElementById("myTable");
 
             // Create a <tr> element and add it to the 1st position of the table:
-            table.innerHTML = "<thead><th>Destination</th><th>Miles</th><th>Gallons</th><th>MPG</th></thead>";
 
 
         }
