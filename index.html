@@ -9,7 +9,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
-<body
+<body>
     <h1>Trip calculator</h1>
     <button class="btn-primary" onclick="displayData()">Display data</button>
     <table id="my-table" class="table table-striped">
@@ -28,15 +28,14 @@
             const cincinnati = { destination: "Cincinnati", miles: 132, gallons: 3.9 }
 
             const cities = [chicago, stLouis, indianapolis, nashville, cincinnati];
-            createTHead("Destination");
-            createTHead("Miles");
-            createTHead("Gallons");
-            createTHead("MPG");
+            createTH("Destination");
+            createTH("Miles");
+            createTH("Gallons");
+            createTH("MPG");
         }
-        function createTHead(text){
+        function createTH(text){
             const data = document.createElement("th");
-            const header = document.createTextNode(text);
-            data.appendChild(header)
+            data.appendChild(document.createTextNode(text));
             document.getElementById("table-head").appendChild(data)
         }
 
